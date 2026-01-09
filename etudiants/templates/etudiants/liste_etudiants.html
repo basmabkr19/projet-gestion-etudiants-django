@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Étudiants</title>
+    <link rel="stylesheet" href="{% static 'etudiants/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <p>
+            Bienvenue, {{ user.username }} ! 
+            <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit">Se déconnecter</button>
+            </form>
+        </p>
+        <hr>
+
+        <h1>Liste des Étudiants</h1>
+        <a href="{% url 'ajouter_etudiant' %}">Ajouter un étudiant</a>
+
+        <ul>
+            {% for etudiant in etudiants %}
+                <li>
+                    <span>{{ etudiant.prenom }} {{ etudiant.nom }}</span>
+                    <div>
+                        <a href="{% url 'modifier_etudiant' etudiant.id %}">Modifier</a>
+                        <a href="{% url 'supprimer_etudiant' etudiant.id %}">Supprimer</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

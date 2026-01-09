@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier un Étudiant</title>
+    <link rel="stylesheet" href="{% static 'etudiants/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Modifier : {{ etudiant.prenom }} {{ etudiant.nom }}</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sauvegarder les modifications</button>
+        </form>
+        
+        <br>
+        <a href="{% url 'liste_etudiants' %}">← Retour à la liste</a>
+    </div>
+</body>
+</html>
