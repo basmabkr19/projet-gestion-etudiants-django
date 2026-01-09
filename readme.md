@@ -49,5 +49,5 @@ Nom d'utilisateur : basma
 Mot de passe : python2025
 Note de sécurité : Ces identifiants sont fournis exclusivement pour la correction de ce projet pédagogique. Dans un contexte de production, de telles informations ne seraient jamais communiquées publiquement.
 
-👤 Auteur
+Auteur :
 Projet réalisé par Basma Bakar dans le cadre d'une formation en programmation avancée.
